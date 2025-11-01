@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-image: url(sign-up1p.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.container {
+    margin: auto;
+    position: relative;
+    top: 50px;
+    max-width: 600px;
+    padding: 8px 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.575);
+    border-radius: 10px;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: -10 0 10px rgba(255, 255, 255, 0.468);
+}
+.num-tasks {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, .18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.304);
+}
+.details {
+    width: 100%;
+}
+.details h3 {
+    color: white;
+}
+.progressbar {
+    max-width: 100%;
+    height: 7px;
+    background-color: rgba(230, 136, 5, 0.427); 
+    border-radius: 20px;
+    position: relative;
+    margin-top: 15px;
+}
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: rgba(230, 136, 5, 1);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+#numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: orange;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 650;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    color: white;
+}
+.input-add {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+.input-add #input-value {
+    width: 60%;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid orangered;
+    background-color: azure;
+    border-radius: 3px;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out;
+    transition: border-bottom 0.4s ease-in-out;
+}
+.input-add #input-value:focus {
+    background-color: aliceblue;
+    border-bottom: 3px solid orange;
+}
+.input-add #task-append {
+    font-size: 20px;
+    width: 20%;
+    padding: 5px 0;
+    text-transform: uppercase;
+    color: orange;
+    font-weight: 650;
+    background-color: rgba(0, 0, 0, 0.673);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+.input-add #task-append:hover {
+    background-color: orange;
+    color: black;
+    transform: scale(1.02);
+}
+.task-container {
+    text-align: center;
+    width: 80%;
+}
+.task-container li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    background-color: #ffa60085;
+    padding: 10px 0;
+    border-radius: 6px;
+    margin-bottom: 13px;
+    transition: opacity 0.5s ease-in-out;
+}
+.task-container li div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+}
+.task-container li div:first-child input[type="checkbox"] {
+   width: 15px;
+   height: 15px;
+   cursor: pointer;
+   position: relative;
+   left: 10px;
+}
+/* for toggle using js */
+.task-container li div:first-child .span-task {
+    text-transform: capitalize;
+    font-size: 20px;
+    color: red;
+    font-weight: 580;
+    text-decoration: 2px black line-through;
+}
+.complete {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.task-container li div:first-child .text {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 580;
+    position: relative;
+    left: 30px;
+    width: 300px;
+}
+.task-container li div:last-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    right: -30px;
+}
+#edit-text {
+    transition: opacity 0.5s ease-in-out;
+    width: 35px;
+    right: -10px;
+}
+.task-container li div:last-child #edit-text, #delete-task{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+#delete-task {
+    width: 33px;
+    
+}
+#edit-text:hover, #delete-task:hover {
+    background-color: orange;
+}
+button {
+    cursor: pointer;
+    user-select: none;
+}
+#clear-tasks {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: orange;
+    font-weight: 650;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 50px;
+    background-color: rgba(0, 0, 0, 0.689);
+    transition: background-color 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#clear-tasks:hover {
+    color: black;
+    background-color: orange;
+    transform:  translateX(-50%) scale(1.02);
+}
+
+/* for animate when add a task */
+.scalein {
+    animation: scalein 1s ease-in-out alternate;
+}
+@keyframes scalein {
+    0%{
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* when list delete */
+.scaleout {
+    animation: scaleout 2s ease-in-out alternate;
+}
+
+@keyframes scaleout {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0.6);
+        opacity: 0.4;
+    }
+}
+@media  screen and (max-width: 640px) {
+    .task-container li {
+       padding: 5px 10px;
+    }
+    #edit-text {
+        right: 50px;
+    }
+    #delete-task {
+          right: 36px;
+    }
+    .text:focus {
+       border: none;
+       outline: none;
+    } 
+}

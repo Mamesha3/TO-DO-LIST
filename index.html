@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST APP</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>to do list</h1>
+        <div class="num-tasks">
+            <div class="details">
+                <h3>Keep it Up!</h3>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="stats-num">
+                <p id="numbers">0 / 0</p>
+            </div>
+        </div>
+        <div class="input-add">
+            <input type="text" id="input-value"  placeholder="Add task here">
+            <button id="task-append">add</button>
+        </div>
+        <ul class="task-container"></ul>
+        <button id="clear-tasks">clear all</button>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
