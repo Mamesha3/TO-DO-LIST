@@ -252,13 +252,29 @@ button {
        padding: 5px 10px;
     }
     #edit-text {
-        right: 50px;
+        right: 70px;
     }
     #delete-task {
-          right: 36px;
+          right: 55px;
     }
     .text:focus {
        border: none;
        outline: none;
     } 
+    .container {
+        width: 450px;
+    }
+    .num-tasks {
+        align-items: flex-start;
+    }
+    .stats-num {
+        height: 50px;
+        position: relative;
+        top: -10px;
+    }
+    #numbers {
+        width: 60px;
+        height: 60px;
+        font-size: 23px;      
+    }
 }
