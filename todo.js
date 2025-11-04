@@ -4,6 +4,8 @@ const addBtn = document.querySelector('#task-append')
 const taskList = document.querySelector('.task-container')
 const clearBtn = document.querySelector('#clear-tasks')
 
+getItem()
+
 function createLi(inpValue) {
     // creating dom elements
     let list = document.createElement('li')
@@ -13,8 +15,8 @@ function createLi(inpValue) {
     let inputCheck = document.createElement('input')
     let editBnt = document.createElement('button')
     let deleteBtn = document.createElement('button')
-    let imgEdit = document.createElement('img')
-    let imgDelete = document.createElement('img')
+    let imgEdit = document.createElement('i')
+    let imgDelete = document.createElement('i')
 
     // editing the doms we created
     span.classList.add('text')
@@ -23,13 +25,11 @@ function createLi(inpValue) {
     inputCheck.classList.add('completed')
 
     editBnt.id = 'edit-text'
-    imgEdit.src = 'edit-blue.jpg'
-    imgEdit.style.width = '23px'
+    imgEdit.className = 'fa-solid fa-pen-to-square'
     editBnt.appendChild(imgEdit)
 
     deleteBtn.id = 'delete-task'
-    imgDelete.style.width = '20px'
-    imgDelete.src = 'delete-blue.jpg'
+    imgDelete.className = 'fa-solid fa-trash'
     deleteBtn.appendChild(imgDelete)
 
     // append child each
@@ -133,4 +133,3 @@ function getItem() {
     let checkedItem = document.querySelectorAll('.completed:checked')
         updateCheckNum(checkedItem)
 }
-getItem()

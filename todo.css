@@ -11,12 +11,15 @@ body {
 }
 .container {
     margin: auto;
-    position: relative;
+    position: absolute;
     top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 600px;
     padding: 8px 12px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.575);
     border-radius: 10px;
+    overflow: hidden;
 }
 h1 {
     text-align: center;
@@ -116,13 +119,14 @@ h1 {
     transform: scale(1.02);
 }
 .task-container {
-    text-align: center;
+    text-align: left;
     width: 80%;
 }
 .task-container li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    margin: auto;
     width: 100%;
     background-color: #ffa60085;
     padding: 10px 0;
@@ -131,21 +135,20 @@ h1 {
     transition: opacity 0.5s ease-in-out;
 }
 .task-container li div:first-child {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 70%;
+    display: flex;
+    width: 30%;
 }
 .task-container li div:first-child input[type="checkbox"] {
    width: 15px;
    height: 15px;
    cursor: pointer;
    position: relative;
-   left: 10px;
+   left: -20px;
 }
 /* for toggle using js */
 .task-container li div:first-child .span-task {
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 16px;
     color: red;
     font-weight: 580;
     text-decoration: 2px black line-through;
@@ -156,38 +159,35 @@ h1 {
 }
 .task-container li div:first-child .text {
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 580;
     position: relative;
-    left: 30px;
-    width: 300px;
+    width: 130%;
 }
 .task-container li div:last-child {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    gap: 5px;
     position: relative;
     right: -30px;
 }
 #edit-text {
     transition: opacity 0.5s ease-in-out;
-    width: 35px;
-    right: -10px;
+    color: orangered;
 }
 .task-container li div:last-child #edit-text, #delete-task{
     border: none;
     outline: none;
     border-radius: 10px;
     font-size: 20px;
-    transition: background-color 0.5s ease-in-out;
+    background-color: transparent;
+    transition: color 0.5s ease-in-out;
     cursor: pointer;
-    position: relative;
 }
 #delete-task {
-    width: 33px;
-    
+    color: orangered; 
 }
 #edit-text:hover, #delete-task:hover {
-    background-color: orange;
+    color: orange;
 }
 button {
     cursor: pointer;
@@ -247,25 +247,25 @@ button {
         opacity: 0.4;
     }
 }
-@media  screen and (max-width: 640px) {
-    .task-container li {
-       padding: 5px 10px;
+@media (max-width: 500px) {
+    .container {
+        width: 290px;
     }
-    #edit-text {
-        right: 70px;
-    }
-    #delete-task {
-          right: 55px;
-    }
+     #numbers {
+        width: 60px;
+     }
+}
+@media  screen and (min-width: 350px) and (max-width: 860px) {
     .text:focus {
        border: none;
        outline: none;
     } 
-    .container {
-        width: 450px;
-    }
+    /* .container {
+        max-width: 600px;
+    } */
     .num-tasks {
         align-items: flex-start;
+        height: 100px;
     }
     .stats-num {
         height: 50px;
@@ -273,8 +273,16 @@ button {
         top: -10px;
     }
     #numbers {
-        width: 60px;
-        height: 60px;
-        font-size: 23px;      
+        width: 80px;
+        height: 80px;
+        font-size: 27px;      
     }
+}
+@media screen and (min-width: 865px) {
+    .container {
+        max-width: 600px;
+    }
+     #numbers {
+        width: 60px;
+     }
 }
