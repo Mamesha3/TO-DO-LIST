@@ -15,7 +15,7 @@ body {
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 600px;
+    width: 600px;
     padding: 8px 12px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.575);
     border-radius: 10px;
@@ -172,7 +172,7 @@ h1 {
 }
 #edit-text {
     transition: opacity 0.5s ease-in-out;
-    color: orangered;
+    color: blue;
 }
 .task-container li div:last-child #edit-text, #delete-task{
     border: none;
@@ -184,10 +184,10 @@ h1 {
     cursor: pointer;
 }
 #delete-task {
-    color: orangered; 
+    color: orange; 
 }
 #edit-text:hover, #delete-task:hover {
-    color: orange;
+    color: orangered;
 }
 button {
     cursor: pointer;
@@ -247,42 +247,33 @@ button {
         opacity: 0.4;
     }
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 630px) {
     .container {
-        width: 290px;
+        width: 300px;
     }
-     #numbers {
-        width: 60px;
-     }
-}
-@media  screen and (min-width: 350px) and (max-width: 860px) {
-    .text:focus {
-       border: none;
-       outline: none;
-    } 
-    /* .container {
-        max-width: 600px;
-    } */
-    .num-tasks {
-        align-items: flex-start;
-        height: 100px;
-    }
-    .stats-num {
-        height: 50px;
-        position: relative;
-        top: -10px;
+    h1 {
+        font-size: 1.4rem;
     }
     #numbers {
-        width: 80px;
-        height: 80px;
-        font-size: 27px;      
-    }
-}
-@media screen and (min-width: 865px) {
-    .container {
-        max-width: 600px;
-    }
-     #numbers {
         width: 60px;
-     }
+        height: 60px;
+        font-size: 20px;
+    }
+    .task-container li div:first-child .text  {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .task-container li div:last-child {
+        position: relative;
+        right: -20px;
+    }
+    .input-add #input-value{
+        font-size: 1rem;
+    }
+    .input-add #task-append{
+        font-size: 1.1rem;
+    }
+    #clear-tasks {
+        font-size: 1.2rem;
+    }
 }
