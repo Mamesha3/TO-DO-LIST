@@ -6,6 +6,12 @@ const clearBtn = document.querySelector('#clear-tasks')
 
 getItem()
 
+  // to get code click here
+document.querySelector('.code_sign').addEventListener('click',function () {
+      let code = document.querySelector('.code_here')
+      code.classList.toggle('showhere')
+})
+
 function createLi(inpValue) {
     // creating dom elements
     let list = document.createElement('li')
