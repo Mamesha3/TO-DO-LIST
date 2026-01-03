@@ -267,9 +267,8 @@ button {
 }
 .code_here {
     position: absolute;
-    right: 0;
+    right: -150px;
     top: 10px;
-    transform: translateX(150px);
 }
 
 @keyframes slidout {
@@ -281,8 +280,8 @@ button {
     }
 }
 .showhere {
-    transform: translateX(0);
-    animation: slidout 1s ease-in-out alternate;
+   right: 0; 
+   animation: slidout 1s ease-in-out alternate;
 }
 .code_here a {
     color: white;
